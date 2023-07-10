@@ -1,0 +1,34 @@
+**Rows with NAs**
+
+# A tibble: 4 × 4
+  season team  attsn attpgsn
+   <dbl> <chr> <dbl>   <dbl>
+1 202021 ind      NA      NA
+2 202021 mia      NA      NA
+3 202021 okc      NA      NA
+4 202021 sac      NA      NA
+
+**Outliers (by last column)**
+
+# A tibble: 1 × 3
+  season team  uspcsn
+   <dbl> <chr>  <dbl>
+1 200405 dal     1.06
+
+# A tibble: 3 × 3
+  season team  uspcsn
+   <dbl> <chr>  <dbl>
+1 200708 hou   0     
+2 200405 phx   0.0556
+3 200405 uta   0.0588
+
+# A tibble: 1 × 3
+  season team  expavsn
+   <dbl> <chr>   <dbl>
+1 202122 lal      8.06
+
+# A tibble: 1 × 3
+  season team  expavsn
+   <dbl> <chr>   <dbl>
+1 202122 bkn      8.83
+
