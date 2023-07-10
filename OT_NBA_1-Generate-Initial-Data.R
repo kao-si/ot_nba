@@ -524,3 +524,12 @@ season <- md2(202122, "brk", "expavsn", 7.04)
 # 3 202021 okc      NA      NA
 # 4 202021 sac      NA      NA
 
+
+# Save Initial Data (.rds) ####
+
+
+write_rds(game, "Initial-Data_Game.rds")
+
+write_rds(season, "Initial-Data_Season.rds")
+
+
