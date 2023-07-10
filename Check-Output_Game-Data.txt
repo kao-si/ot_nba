@@ -1,137 +1,63 @@
 **Logical Relation Violations**
 
 Quarter scores not equal to total score, Visitor
-# A tibble: 4 × 9
-      date visitor host  vsco_q1 vsco_q2 vsco_q3 vsco_q4 vsco_ot vsco_tot
-     <dbl> <chr>   <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>    <dbl>
-1 20030212 chi     phi        30      19      36      24       1      111
-2 20100113 sas     okc        35      28      12      23      10      109
-3 20140416 uta     min        31      20      29      27      27      136
-4 20170121 sas     cle         2      35      27      23      11      118
+# A tibble: 0 × 9
+# ℹ 9 variables: date <dbl>, visitor <chr>, host <chr>, vsco_q1 <dbl>,
+#   vsco_q2 <dbl>, vsco_q3 <dbl>, vsco_q4 <dbl>, vsco_ot <dbl>, vsco_tot <dbl>
 
 Quarter scores not equal to total score, Host
-# A tibble: 18 × 9
-       date visitor host  hsco_q1 hsco_q2 hsco_q3 hsco_q4 hsco_ot hsco_tot
-      <dbl> <chr>   <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>    <dbl>
- 1 20021104 chi     tor        30      25      14      15      15      109
- 2 20050128 phi     noh        31     223      15      18      12       99
- 3 20050309 njn     noh        13      21      24      19       9       85
- 4 20051102 lal     den        28      22      17      11       8       97
- 5 20051219 det     mem        18      21      22      26      11      104
- 6 20060110 pho     den        26      29      24       2      33      139
- 7 20061101 nyk     mem        25      21      14      29      29      117
- 8 20070119 det     min        21      18      19      21      12       98
- 9 20070128 sas     lal        19      28      23      13      14       94
-10 20070307 cha     pho        20      25      24      19      17      115
-11 20080201 nyk     por        24      14      25      18       1       94
-12 20080206 noh     pho        27      28      27      29      18      130
-13 20100221 sas     det        24      12      24      24      16      109
-14 20100323 cha     was        23      21      21      17       4       96
-15 20100402 mil     cha        17      27      21      15       7       86
-16 20110316 orl     mil        14      23      27      15      10       99
-17 20120408 chi     nyk        31      22     119      19       9      100
-18 20190322 mem     orl        23      35      23      29      13      113
+# A tibble: 0 × 9
+# ℹ 9 variables: date <dbl>, visitor <chr>, host <chr>, hsco_q1 <dbl>,
+#   hsco_q2 <dbl>, hsco_q3 <dbl>, hsco_q4 <dbl>, hsco_ot <dbl>, hsco_tot <dbl>
 
 Visitor quarter scores not equal to host quarter scores
-# A tibble: 10 × 11
-      date visitor host  vsco_q1 vsco_q2 vsco_q3 vsco_q4 hsco_q1 hsco_q2 hsco_q3
-     <dbl> <chr>   <chr>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
- 1  2.00e7 chi     tor        24      22      16      32      30      25      14
- 2  2.01e7 phi     noh        19      24      22      22      31     223      15
- 3  2.01e7 lal     den        26      22      20      21      28      22      17
- 4  2.01e7 pho     den        25      28      32      21      26      29      24
- 5  2.01e7 sas     lal        19      17      21      23      19      28      23
- 6  2.01e7 cha     pho        19      33      27      19      20      25      24
- 7  2.01e7 sas     okc        35      28      12      23      18      33      26
- 8  2.01e7 sas     det        24      21      22      26      24      12      24
- 9  2.01e7 chi     nyk        19      26      30      16      31      22     119
-10  2.02e7 sas     cle         2      35      27      23      33      25      31
-# ℹ 1 more variable: hsco_q4 <dbl>
+# A tibble: 0 × 11
+# ℹ 11 variables: date <dbl>, visitor <chr>, host <chr>, vsco_q1 <dbl>,
+#   vsco_q2 <dbl>, vsco_q3 <dbl>, vsco_q4 <dbl>, hsco_q1 <dbl>, hsco_q2 <dbl>,
+#   hsco_q3 <dbl>, hsco_q4 <dbl>
 
 Visitor total score equal to host total score
-# A tibble: 1 × 5
-      date visitor host  vsco_tot hsco_tot
-     <dbl> <chr>   <chr>    <dbl>    <dbl>
-1 20100402 mil     cha         86       86
+# A tibble: 0 × 5
+# ℹ 5 variables: date <dbl>, visitor <chr>, host <chr>, vsco_tot <dbl>,
+#   hsco_tot <dbl>
 
 Starters score plus reserves score not equal to total score, Visitor
-# A tibble: 13 × 6
-       date visitor host  vstptsu vreptsu vsco_tot
-      <dbl> <chr>   <chr>   <dbl>   <dbl>    <dbl>
- 1 20041130 nyk     atl        97      18      110
- 2 20050417 atl     nyk       101      28      139
- 3 20090429 dal     mem        78      26       94
- 4 20090202 sas     gsw        76      43      110
- 5 20090313 det     tor        95      28       99
- 6 20090313 cle     sac        75      20      126
- 7 20101103 mil     bos        64      39      102
- 8 20110406 orl     cha        97      17      111
- 9 20120306 lal     det        78      77       85
-10 20120421 orl     uta       977      10      107
-11 20121231 mia     orl        59      35      112
-12 20130210 den     bos        74      44      114
-13 20130304 uta     mil        42      63      108
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, vstptsu <dbl>,
+#   vreptsu <dbl>, vsco_tot <dbl>
 
 Starters score plus reserves score not equal to total score, Host
-# A tibble: 17 × 6
-       date visitor host  hstptsu hreptsu hsco_tot
-      <dbl> <chr>   <chr>   <dbl>   <dbl>    <dbl>
- 1 20030404 nyk     uta        66      25       92
- 2 20040131 chi     por        77      52      102
- 3 20080114 lal     sea        79      43      121
- 4 20080222 sac     cha        68      45      115
- 5 20090313 det     tor        84      15       95
- 6 20090313 cle     sac        96      30      123
- 7 20091104 dal     noh        81      31      114
- 8 20100323 cha     was        52      34       96
- 9 20100402 mil     cha        60      27       86
-10 20101124 sas     min       887      22      109
-11 20101203 njn     cha        77      24       91
-12 20110316 orl     mil        61      28       99
-13 20120110 mia     gsw        92      39      111
-14 20121215 dal     min        72      44      114
-15 20131110 was     okc        84      21      106
-16 20140110 mia     brk        88      26      104
-17 20190322 mem     orl        88      35      113
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, hstptsu <dbl>,
+#   hreptsu <dbl>, hsco_tot <dbl>
 
 Number of ties in 4q smaller than that in 2m or total number of ties smaller than that in 4q
-# A tibble: 1 × 6
-      date visitor host    tie tie4q tie2m
-     <dbl> <chr>   <chr> <dbl> <dbl> <dbl>
-1 20180223 mil     tor       9     1     2
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, tie <dbl>, tie4q <dbl>,
+#   tie2m <dbl>
 
 Tied duration in 4q smaller than that in 2m or total tied duration smaller than that in 4q
-# A tibble: 1 × 6
-      date visitor host  tiesc tiesc4q tiesc2m
-     <dbl> <chr>   <chr> <dbl>   <dbl>   <dbl>
-1 20071114 orl     cle    319.    39.4    39.8
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, tiesc <dbl>,
+#   tiesc4q <dbl>, tiesc2m <dbl>
 
 Number of lead changes in 4q smaller than that in 2m or total lead changes smaller than that in 4q
-# A tibble: 1 × 6
-      date visitor host  ledchg ledchg4q ledchg2m
-     <dbl> <chr>   <chr>  <dbl>    <dbl>    <dbl>
-1 20181223 dal     por       11        1        3
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, ledchg <dbl>,
+#   ledchg4q <dbl>, ledchg2m <dbl>
 
 Host lead duraion in 4q smaller than that in 2m or total host lead duration smaller than that in 4q
-# A tibble: 2 × 6
-      date visitor host  hledsc hledsc4q hledsc2m
-     <dbl> <chr>   <chr>  <dbl>    <dbl>    <dbl>
-1 20050213 pho     gsw     64.8     243.     64.7
-2 20121226 det     atl    285.      716     116  
+# A tibble: 0 × 6
+# ℹ 6 variables: date <dbl>, visitor <chr>, host <chr>, hledsc <dbl>,
+#   hledsc4q <dbl>, hledsc2m <dbl>
 
 Number of games played smaller than number of wins, Visitor
-# A tibble: 3 × 5
-      date visitor host    vgp  vgpw
-     <dbl> <chr>   <chr> <dbl> <dbl>
-1 20041225 mia     lal      18    21
-2 20070208 mil     nok      49   119
-3 20110205 mem     hou      15    27
+# A tibble: 0 × 5
+# ℹ 5 variables: date <dbl>, visitor <chr>, host <chr>, vgp <dbl>, vgpw <dbl>
 
 Number of games played smaller than number of wins, Host
-# A tibble: 1 × 5
-      date visitor host    hgp  hgpw
-     <dbl> <chr>   <chr> <dbl> <dbl>
-1 20171227 den     min      34   104
+# A tibble: 0 × 5
+# ℹ 5 variables: date <dbl>, visitor <chr>, host <chr>, hgp <dbl>, hgpw <dbl>
 
 Number of games played smaller than absolute value of streak, Visitor
 # A tibble: 0 × 5
@@ -144,194 +70,92 @@ Number of games played smaller than absolute value of streak, Host
 Total game minutes not equal to minutes played by starters and reserves, Visitor
 
 Note: 'vmpsu' does not exist in original data
-# A tibble: 13 × 7
-       date visitor host  vstmpsu vrempsu vmpsu otnum
-      <dbl> <chr>   <chr>   <dbl>   <dbl> <dbl> <dbl>
- 1 20030211 sas     por       20      63     83     1
- 2 20091122 bos     nyk      195      22    217     1
- 3 20050311 atl     tor      167      78    245     1
- 4 20080324 pho     det      178      67    245     1
- 5 20110119 mem     noh      178      67    245     1
- 6 20041117 bos     was      195      65    260     1
- 7 20110216 ind     det      170      90    260     1
- 8 20030212 chi     phi      163     100    263     1
- 9 20050325 mil     gsw      189      78    267     1
-10 20041105 njn     chi      201      88    289     1
-11 20041206 cha     lac      191      99    290     1
-12 20110327 sac     phi      188.    176.   365     1
-13 20031116 hou     tor      241      23    264     2
+# A tibble: 0 × 7
+# ℹ 7 variables: date <dbl>, visitor <chr>, host <chr>, vstmpsu <dbl>,
+#   vrempsu <dbl>, vmpsu <dbl>, otnum <dbl>
 
 Total game minutes not equal to minutes played by starters and reserves, Host
 
 Note: 'hmpsu' does not exist in original data
-# A tibble: 19 × 7
-       date visitor host  hstmpsu hrempsu hmpsu otnum
-      <dbl> <chr>   <chr>   <dbl>   <dbl> <dbl> <dbl>
- 1 20110201 hou     lal        24      61    85     1
- 2 20030110 chi     mil       140      24   164     1
- 3 20071228 orl     mia       109      56   165     1
- 4 20060212 den     sea       170      75   245     1
- 5 20080109 ind     pho       170      75   245     1
- 6 20100113 sas     okc       170      75   245     1
- 7 20131218 cha     tor       167      79   246     1
- 8 20070119 mia     phi       179      76   255     1
- 9 20101124 sas     min       185      70   255     1
-10 20170131 nop     tor       180      75   255     1
-11 20100304 lal     mia       185      74   259     1
-12 20040228 gsw     chi       231      31   262     1
-13 20130512 sas     gsw       192      71   263     1
-14 20041105 njn     chi       179     110   289     1
-15 20041206 cha     lac       211      79   290     1
-16 20141226 hou     mem       187     106   293     1
-17 20070314 pho     dal       198     101   299     2
-18 20131111 tor     hou       185     140   325     2
-19 20061207 pho     njn       172     178   350     2
+# A tibble: 0 × 7
+# ℹ 7 variables: date <dbl>, visitor <chr>, host <chr>, hstmpsu <dbl>,
+#   hrempsu <dbl>, hmpsu <dbl>, otnum <dbl>
 
 Total seconds not equal to sum of tied, visitor lead and host lead seconds
 
 Note: 'totsc' does not exist in original data
-# A tibble: 33 × 8
-       date visitor host  tiesc vledsc hledsc totsc otnum
-      <dbl> <chr>   <chr> <dbl>  <dbl>  <dbl> <dbl> <dbl>
- 1 20030106 ind     phi    234.  1756.  189.   2180     1
- 2 20100524 orl     bos    412   1588.  180.   2180     1
- 3 20050213 pho     gsw    176.  2359.   64.8  2600     1
- 4 20060107 uta     det    344.   230  2066.   2640     1
- 5 20090526 cle     orl    138.  1370. 1372.   2880     1
- 6 20091204 tor     was    176.  2060.  643    2880     1
- 7 20120127 atl     det    119.   202  2559.   2880     1
- 8 20040228 gsw     chi    305.   341  2474.   3120     1
- 9 20100131 pho     hou    207.  2766.  154    3127     1
-10 20051209 nok     por    388.  1899.  843    3130     1
-11 20040406 phi     atl    346.  1771. 1020.   3138     1
-12 20100218 den     cle    499.  1904.  747    3150     1
-13 20021115 gsw     lal    257.   251  2644.   3152     1
-14 20060505 cle     was    283.   585. 2283.   3152     1
-15 20080127 was     mil    342.  1569. 1242    3153     1
-16 20070202 por     den    170.  1485. 1503.   3158     1
-17 20070316 por     lal    417   1599. 1142.   3158     1
-18 20040322 hou     por    164.  2573   422.   3160     1
-19 20080114 lal     sea    450   1638  1072    3160     1
-20 20160405 min     gsw     73    330  2757    3160     1
-21 20050209 mia     nyk    154.  2944    62.8  3161     1
-22 20191217 brk     nop    389   1585  1229    3203     1
-23 20190119 lal     hou     75   2886   243    3204     1
-24 20140325 okc     dal    370    998  1838    3206     1
-25 20041105 njn     chi    651.  2326   503.   3480     1
-26 20041206 cha     lac    833   2051.  596.   3480     1
-27 20121226 det     atl    303.   331.  285.    919     2
-28 20041213 bos     lac    181.   746. 1553.   2480     2
-29 20080419 pho     sas    345   2754.  182.   3281     2
-30 20120422 okc     lal    443.  2577.  424.   3444     2
-31 20061207 pho     njn    585.  2274.  602.   3461     2
-32 20131226 atl     cle    608   1547  1347    3502     2
-33 20211126 sac     lal    811    873  2123    3807     3
+# A tibble: 4 × 8
+      date visitor host  tiesc vledsc hledsc totsc otnum
+     <dbl> <chr>   <chr> <dbl>  <dbl>  <dbl> <dbl> <dbl>
+1 20191217 brk     nop     389   1585   1229  3203     1
+2 20190119 lal     hou      75   2886    243  3204     1
+3 20131226 atl     cle     608   1547   1347  3502     2
+4 20211126 sac     lal     811    873   2123  3807     3
 
 **Outliers (by last column)**
 
-# A tibble: 1 × 4
-      date visitor host   vapp
-     <dbl> <chr>   <chr> <dbl>
-1 20130417 hou     lal       5
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vapp <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vstmpsu <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, htovpc <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hefgpc <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hsco_q2 <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hsco_q3 <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hgpw <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vgpw <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, lsp3 <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hstptsu <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, happ <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vpmav <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vpmav <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vstptsu <dbl>
+
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vsco_q1 <dbl>
 
 # A tibble: 1 × 4
-      date visitor host  vstmpsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20030211 sas     por        20
-
-# A tibble: 1 × 4
-      date visitor host  htovpc
-     <dbl> <chr>   <chr>  <dbl>
-1 20091208 cle     mem     113.
-
-# A tibble: 1 × 4
-      date visitor host  hefgpc
-     <dbl> <chr>   <chr>  <dbl>
-1 20170402 ind     cle        1
-
-# A tibble: 1 × 4
-      date visitor host  hsco_q2
-     <dbl> <chr>   <chr>   <dbl>
-1 20050128 phi     noh       223
-
-# A tibble: 1 × 4
-      date visitor host  hsco_q3
-     <dbl> <chr>   <chr>   <dbl>
-1 20120408 chi     nyk       119
-
-# A tibble: 1 × 4
-      date visitor host   hgpw
-     <dbl> <chr>   <chr> <dbl>
-1 20171227 den     min     104
-
-# A tibble: 1 × 4
-      date visitor host   vgpw
-     <dbl> <chr>   <chr> <dbl>
-1 20070208 mil     nok     119
-
-# A tibble: 1 × 4
-      date visitor host   lsp3
-     <dbl> <chr>   <chr> <dbl>
-1 20030404 nyk     uta       2
-
-# A tibble: 1 × 4
-      date visitor host  hstptsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20101124 sas     min       887
-
-# A tibble: 1 × 4
-      date visitor host   happ
-     <dbl> <chr>   <chr> <dbl>
-1 20081121 orl     ind      99
-
-# A tibble: 1 × 4
-      date visitor host  vpmav
-     <dbl> <chr>   <chr> <dbl>
-1 20070405 mia     cle      20
-
-# A tibble: 1 × 4
-      date visitor host  vpmav
-     <dbl> <chr>   <chr> <dbl>
-1 20140309 den     nop     -20
-
-# A tibble: 1 × 4
-      date visitor host  vstptsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20120421 orl     uta       977
-
-# A tibble: 1 × 4
-      date visitor host  vsco_q1
-     <dbl> <chr>   <chr>   <dbl>
-1 20170121 sas     cle         2
-
-# A tibble: 2 × 4
       date visitor host  hsco_q4
      <dbl> <chr>   <chr>   <dbl>
 1 20040208 tor     gsw         2
-2 20060110 pho     den         2
 
-# A tibble: 1 × 4
-      date visitor host  vrempsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20091122 bos     nyk        22
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vrempsu <dbl>
 
-# A tibble: 1 × 4
-      date visitor host  vrempsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20031116 hou     tor        23
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, vrempsu <dbl>
 
-# A tibble: 1 × 4
-      date visitor host  hstmpsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20110201 hou     lal        24
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hstmpsu <dbl>
 
-# A tibble: 1 × 4
-      date visitor host  hrempsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20030110 chi     mil        24
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hrempsu <dbl>
 
-# A tibble: 1 × 4
-      date visitor host  hrempsu
-     <dbl> <chr>   <chr>   <dbl>
-1 20150415 was     cle       187
+# A tibble: 0 × 4
+# ℹ 4 variables: date <dbl>, visitor <chr>, host <chr>, hrempsu <dbl>
 
