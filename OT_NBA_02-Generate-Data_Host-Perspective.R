@@ -14,6 +14,7 @@ season <- read_rds("Initial-Data_Season.rds")
 
 ## Process Game Data ====
 
+# Create and rename variables
 game <- game %>%
   mutate(
     scodiff = hsco_tot - vsco_tot,
@@ -23,8 +24,8 @@ game <- game %>%
 
 ## Join Game Data with Season Data ====
 
-# Rename variables in Season data to prepare join with Game data for host
-# teams and visitor teams
+# Rename variables in Season data to prepare join with Game data for Host
+# teams and Visitor teams
 hseason <- season
 vseason <- season
 
@@ -32,11 +33,11 @@ colnames(hseason) <- paste("h", colnames(hseason), sep = "_")
 colnames(vseason) <- paste("v", colnames(vseason), sep = "_")
 
 data <- game %>%
-  # join Season data for host teams
+  # join Season data for Host teams
   left_join(hseason,
             by = c("season" = "h_season",
                    "host" = "h_team")) %>%
-  # join Season data for visitor teams
+  # join Season data for Visitor teams
   left_join(vseason,
             by = c("season" = "v_season",
                    "visitor" = "v_team"))
