@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-Raw-Data/*
+.DS_Store
+Raw-Data/**
 *.rds
-
+*.RData

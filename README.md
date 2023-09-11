@@ -13,6 +13,6 @@
   - Kitty Nie: 2002-2011
   - Grace Cheang: 2012-2021
 
-- As a result, the raw data contain idiosyncratic errors and systematic checks on the raw data were performed to correct the errors and generate **Initial Data**
+- As a result, the raw data contain idiosyncratic errors. Systematic checks on the raw data were performed to correct the errors and [generate **Initial Data**](OT_NBA_01-Generate-Initial-Data.R)
 
-- We then combine Game data and Season data. The data used for analysis takes the perspective of the Host team in a game  (**Data_HP**). We also wrote code that generates data that takes the perspective of the Forced team in a game (the team being forced into the 1st OT) for potential analysis
+- We then combine Game data and Season data. The data used for analysis takes the perspective of the Host team in a game  ([**Data_HP**](OT_NBA_02-Generate-Data_Host-Perspective.R)). We also wrote [code](OT_NBA_02-Generate-Data_Forced-Perspective.R) that generates data that takes the perspective of the Forced team in a game (the team being forced into the 1st OT) for potential analysis
