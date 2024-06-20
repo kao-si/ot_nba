@@ -1,20 +1,15 @@
 
-
-# Load Initial Data ####
-
-
 library(tidyverse)
 
+# Load data
 game <- read_rds("Initial-Data_Game.rds")
 season <- read_rds("Initial-Data_Season.rds")
 
-
 # Generate Data (Host Perspective) ####
 
+## Process Data ====
 
-## Process Game Data ====
-
-# Create and rename variables
+# Create and rename variables in Game data
 game <- game %>%
   mutate(
     scodiff = hsco_tot - vsco_tot,
@@ -22,16 +17,14 @@ game <- game %>%
   rename(hforced = lsv) %>%
   select(season, date, visitor, host, scodiff, hwin, hforced, everything())
 
-## Join Game Data with Season Data ====
-
-# Rename variables in Season data to prepare join with Game data for Host
-# teams and Visitor teams
+# Duplicate Season data for host and visitor teams to join with Game data
 hseason <- season
 vseason <- season
 
 colnames(hseason) <- paste("h", colnames(hseason), sep = "_")
 colnames(vseason) <- paste("v", colnames(vseason), sep = "_")
 
+# Join Game data with Season data
 data <- game %>%
   # join Season data for Host teams
   left_join(hseason,
@@ -42,9 +35,7 @@ data <- game %>%
             by = c("season" = "v_season",
                    "visitor" = "v_team"))
 
-
-# Label Factor Variables ####
-
+## Factor Variables ====
 
 data$hwin <- factor(data$hwin,
                     levels = c(0, 1),
@@ -52,7 +43,7 @@ data$hwin <- factor(data$hwin,
 
 data$hforced <- factor(data$hforced,
                        levels = c(0, 1),
-                       labels = c("Host Was Trailing", "Host Was Forced"))
+                       labels = c("Host Forcing OT1", "Host Forced to OT1"))
 
 data$type <- factor(data$type,
                     levels = c(0:4),
@@ -85,12 +76,6 @@ data$v_levelsn <- factor(data$v_levelsn,
                                     "Conference Semifinals", "Conference Finals",
                                     "Finals", "Champions"))
 
-
 # Save Data (Host Perspective) ####
 
-
 write_rds(data, "Data_HP.rds")
-
-# haven::write_dta(data, "Data_HP.dta")
-
-# readr::write_csv(data, "Data_HP.csv")

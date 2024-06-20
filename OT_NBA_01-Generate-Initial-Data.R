@@ -1,29 +1,20 @@
 
-
-# Process Raw Data ####
-
-
 library(tidyverse)
 library(readxl)
 
-## Load Data from Excel ====
+# Process Raw Data ####
 
+# Load data
 game_0211 <- read_excel("Raw-Data/Data_Game_2002-2011.xlsx")
 game_1221 <- read_excel("Raw-Data/Data_Game_2012-2021.xlsx")
 season_0211 <- read_excel("Raw-Data/Data_Season_2002-2011.xlsx")
 season_1221 <- read_excel("Raw-Data/Data_Season_2012-2021.xlsx")
 
-## Combine Data ====
-
+# Combine data
 game <- bind_rows(game_0211, game_1221)
 season <- bind_rows(season_0211, season_1221)
 
-## Tidy Season Data ====
-
-# Set team abbreviations to lower case letters
-season$team <- str_to_lower(season$team)
-
-# Construct certain percentage variables
+# Construct percentage variables in Season data
 season <- season %>%
   separate(howpcsn, c("howsn", "holsn"), convert = TRUE) %>%
   separate(rowpcsn, c("rowsn", "rolsn"), convert = TRUE) %>%
@@ -40,10 +31,13 @@ season <- season %>%
     m10wpcsn = m10wsn/(m10wsn + m10lsn)
   )
 
-## Reconcile Team Abbreviations between Game and Season Data ====
+# Reconcile team abbreviations between Game and Season data
 
-# Some team abbreviations were not exactly the same in Game data vs. in Season
-# data during data collection and therefore need to be reconciled
+# Some team abbreviations were not exactly the same between the two data sets
+# during data collection and therefore need to be reconciled
+
+# Set team abbreviations in Season data to lower case letters
+season$team <- str_to_lower(season$team)
 
 # Extract all team abbreviations in Game data
 gkey <- game %>% 
@@ -66,13 +60,21 @@ table(check_abbr$season, check_abbr$role, check_abbr$team)
 # | 'noh'             | 200708-201011    |
 # | 'pho'             | 200203-202122    |
 
+# Modify team abbreviations in Season data
+season$team[season$team == "bkn"] <- "brk"
+
+season$team[season$team == "cha" & season$season >= 201415] <- "cho"
+
+season$team[season$team == "nop" & season$season >= 200708 
+& season$season <= 201011] <- "noh"
+
+season$team[season$team == "phx"] <- "pho"
 
 # Check Raw Data ####
 
-
 ## Game Data ====
 
-### Check Logical Relations among Variables ----
+# Check logical relations among variables
 
 # Redirect output in console to a text file for processing
 sink("Check-Output_Game-Data.txt")
@@ -164,11 +166,11 @@ game %>% mutate(totsc = round(tiesc + vledsc + hledsc, 0)) %>%
 # Pause redirecting console output
 sink()
 
-### Check NAs and Outliers ----
-
 # Check NAs
 colSums(is.na(game))[colSums(is.na(game)) > 0]
 # no column with incidental NAs
+
+# Check outliers
 
 # Create function 'abn' to return the smallest and largest n values in each
 # column in Game data
@@ -179,7 +181,7 @@ abn <- function(x, n) {
 }
 
 # Create a data frame to inspect potential outliers
-check1 <- as.data.frame(lapply(game, abn, n = 10))
+check1 <- map_df(game, abn, n = 10)
 
 # Return outliers values identified above using function 'fd'
 fd <- function(col_name, n1, n2) {
@@ -187,7 +189,7 @@ fd <- function(col_name, n1, n2) {
        c("date", "visitor", "host", col_name)]
 }
 
-# Continue redirecting output in console to a text file for processing 
+# Continue redirecting output in console to the text file for processing 
 sink("Check-Output_Game-Data.txt", append = TRUE)
 
 cat("\n**Outliers (by last column)**\n")
@@ -238,18 +240,16 @@ cat("\n")
 # Stop redirecting console output
 sink()
 
-
 ## Season Data ====
-
-
-### Check NAs and Outliers ----
 
 # Check NAs
 colSums(is.na(season))[colSums(is.na(season)) > 0]
 # 2 variables that have NAs： ‘attsn', 'attpgsn'
 
+# Check outliers
+
 # Create a data frame to inspect potential outliers using function 'abn'
-check2 <- as.data.frame(lapply(season, abn, n = 10))
+check2 <- map_df(season, abn, n = 10)
 
 # Return outliers values identified above using function 'fd2'
 fd2 <- function(col_name, n1, n2) {
@@ -279,22 +279,9 @@ cat("\n")
 # Stop redirecting console output
 sink()
 
+# Modify Raw Data ####
 
-# Modify Raw Data and Generate Initial Data ####
-
-
-## Modify team abbreviations in Season data ====
-
-season$team[season$team == "bkn"] <- "brk"
-
-season$team[season$team == "cha" & season$season >= 201415] <- "cho"
-
-season$team[season$team == "nop" & season$season >= 200708 
-            & season$season <= 201011] <- "noh"
-
-season$team[season$team == "phx"] <- "pho"
-
-## Modify Game data using function 'md' ====
+## Modify Game Data ====
 
 md <- function(datev, vname, hname, col_name, newval) {
   game[[col_name]][game$date == datev &
@@ -471,7 +458,7 @@ game <- md(20070208, "mil", "nok", "vgpw", 19)
 
 game <- md(20171227, "den", "min", "hgpw", 22)
 
-## Modify Season data using function 'md2' ==== 
+## Modify Season Data ==== 
 
 md2 <- function(sn, tname, col_name, newval) {
   season[[col_name]][season$season == sn &
@@ -485,6 +472,8 @@ season <- md2(200405, "pho", "uspcsn", 0.7222)
 season <- md2(200405, "uta", "uspcsn", 0.5294)
 season <- md2(202122, "lal", "expavsn", 8.12)
 season <- md2(202122, "brk", "expavsn", 7.04)
+
+# Notes:
 
 # After executing the modification commands, regenerate the two Check-Output
 # files to confirm the changes
@@ -512,7 +501,6 @@ season <- md2(202122, "brk", "expavsn", 7.04)
 # <dbl> <chr>   <chr>   <dbl>
 # 1 20040208 tor     gsw         2
 
-
 # 'Check-Output_Season-Data.txt':
 
 # Rows with NAs
@@ -524,12 +512,8 @@ season <- md2(202122, "brk", "expavsn", 7.04)
 # 3 202021 okc      NA      NA
 # 4 202021 sac      NA      NA
 
-
-# Save Initial Data (.rds) ####
-
+# Save Initial Data ####
 
 write_rds(game, "Initial-Data_Game.rds")
 
 write_rds(season, "Initial-Data_Season.rds")
-
-
